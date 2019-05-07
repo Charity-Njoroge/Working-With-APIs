@@ -38,13 +38,17 @@ page2_repos = response_page2.json()
 response_user = requests.get("https://api.github.com/users", headers=headers)
 user = response_user.json()
 
-# Create a repository named learning-about-apis.
+# Create repositories named learning-about-apis and test.
 # Assign the status code of the response to the status variable.
 payload = {"name": "learning-about-apis"}
 response_repo = requests.post("https://api.github.com/users/repos",
                               headers=headers,
                               json=payload)
 status = response_repo.status_code
+payload1 = {"name": "test"}
+response_repo1 = requests.post("https://api.github.com/users/repos",
+                               headers=headers, json=payload1)
+
 # Make a PATCH request to the learning about apis repository and the test
 # https://api.github.com/repos/VikParuchuri/learning-about-apis
 # https://api.github.com/repos/VikParuchuri/learning-about-apis
@@ -69,11 +73,3 @@ response_delete = requests.delete\
     ("https://api.github.com/repos/VikParuchuri/learning-about-apis",
      headers=headers)
 status4 = response_delete.status_code
-
-
-
-
-
-
-
-
