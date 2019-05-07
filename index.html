@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block body%}
+<div class="container">
+    <form method="POST">
+        <div class="form-group">
+            <label for="formSMSMessage">SMS Message</label>
+            <input name="smsMessage" type="text" class="form-control" id="smsMessage" placeholder="Enter SMS Message">
+        </div>
+        <div class="form-group">
+            <label for="formPhoneNumber">Phone Number</label>
+            <input name="phoneNumber" type="text" class="form-control" id="phoneNumber" placeholder="Enter Phone Numner">
+        </div>
+        <button id="sendSMS" type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+{% endblock %}
